@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="product">
+
+<insert id="insertProduct" parameterType="productvo">
+<!-- 상품 등록  -->
+<![CDATA[
+insert into product values (product_seq.nextval, #{name }, #{main_photo }, #{main_des }, #{price }, #{sub_photo }, #{sub_des }, sysdate , #{category_no })
+]]>
+</insert>
+
+<select id="getProductAdmin" resultType="productvo">
+<!-- 카테고리 이름과 상품정보일부 리스트로 가져오기  -->
+<![CDATA[
+select c.title as title , p.no as no, p.name as name, p.main_photo as main_photo, p.price as price , p.reg_date as reg_date
+from product p, category c
+where p.CATEGORY_NO = c.no
+]]>
+</select>
+
+<select id="getProduct" resultType="productvo" parameterType="Long">
+<!--  상품정보  리스트로 가져오기  -->
+<![CDATA[
+select no, name, main_photo, main_des, price, sub_photo, sub_des, reg_date, category_no from product where category_no = #{no }
+]]>
+</select>
+
+
+</mapper>

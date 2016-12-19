@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias alias="categoryvo" type="com.hotdog2017.admin.vo.CategoryVo"/>
+		<typeAlias alias="productvo" type="com.hotdog2017.admin.vo.ProductVo"/>
+		
+    </typeAliases>
+    
+	<mappers>
+		<mapper resource="mybatis/mappers/category.xml" />
+		<mapper resource="mybatis/mappers/product.xml" />
+	</mappers>
+	
+</configuration>
