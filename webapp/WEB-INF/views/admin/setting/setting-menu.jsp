@@ -74,6 +74,7 @@ var fetchList = function(){
 		}
 	});
 }
+
 $(function() {
 		
 	fetchList();

@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------------------------------- Category
 select * FROM CATEGORY order by no;
 
-insert into category VALUES(category_seq.nextval, 'Bag');
+insert into category VALUES(category_seq.nextval, '123');
 
 delete FROM CATEGORY;
 
